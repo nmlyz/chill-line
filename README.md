@@ -16,4 +16,6 @@ python3 main.py
 ```
 
 It writes the line to `/output/entry.txt` (`OUTPUT_DIR` overrides the
-directory). Running it twice produces byte-identical output.
+directory, or pass `--output-dir`). The file is written atomically via a
+temporary file and read back afterwards to confirm the bytes on disk match
+the intended line exactly. Running it twice produces byte-identical output.
